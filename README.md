@@ -26,19 +26,6 @@ The LX-16A servos offer excellent value with built-in feedback, but their torque
 | Runtime | ~1.5-2 hours |
 | Control | Raspberry Pi Zero 2W or Pi 5 |
 
-## Key Differences from RoverBot v1
-
-| Aspect | roverbot.v1 | RoverBot v1 |
-|--------|-----------|-------------|
-| Motors | LX-16A servos ($64) | Pololu 37D ($284) |
-| Motor drivers | None needed | 2x Cytron MDD10A |
-| Voltage | 7.4V (2S) | 12V (via buck from 4S) |
-| Wheels | 85mm thick rubber | 192mm Wasteland |
-| Frame | 3D printed | Aluminum extrusion |
-| Weight | ~1.5 kg | ~8.3 kg |
-| Terrain | Indoor/light outdoor | All-terrain |
-| Cost | ~$320 | ~$1000 |
-
 ## Servo Wiring
 
 The LX-16A uses a daisy-chain serial bus - all 4 servos connect to a single UART:
@@ -117,7 +104,7 @@ Thrust-to-weight ratio: **12:1** - excellent for indoor and light outdoor use.
 - Wheel circumference: π × 85mm = 267mm
 - Speed: 53 × 0.267m/min = 14.2 m/min = **0.24 m/s (0.5 mph)**
 
-Slower than RoverBot v1 (1.5 mph) but adequate for indoor mapping.
+Adequate for indoor mapping and light outdoor use.
 
 ## Sensor Options
 

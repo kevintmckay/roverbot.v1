@@ -208,19 +208,4 @@ https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
 
 ---
 
-## COMPARISON: roverbot.v1 vs RoverBot v1
-
-| Aspect | roverbot.v1 | RoverBot v1 | Savings |
-|--------|-----------|-------------|---------|
-| Motors | $64 | $284 | $220 |
-| Motor drivers | $0 | $30 | $30 |
-| Wheels + couplers | $56 | $192 | $136 |
-| Frame | $25 | $100 | $75 |
-| Compute | $15 | $0 (owned) | - |
-| **Total** | **~$320** | **~$1000** | **~$680** |
-
-The roverbot.v1 costs roughly **1/3 the price** of RoverBot v1.
-
----
-
 *Generated for roverbot.v1 - LX-16A based platform*

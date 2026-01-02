@@ -23,19 +23,19 @@ The standard roverbot.v1 is conservatively sized with a 12:1 thrust-to-weight ra
 ## Size Comparison
 
 ```
-                    Crawlbot        roverbot.v1     roverbot_XL.v1
-                    305×170mm       300×200mm       500×350mm
+                    roverbot.v1     roverbot_XL.v1
+                    300×200mm       500×350mm
 
-                    ┌─────────┐     ┌──────────┐    ┌────────────────┐
-                    │ ●     ● │     │ ●      ● │    │ ●            ● │
-                    │         │     │          │    │                │
-                    │         │     │          │    │                │
-                    │ ●     ● │     │ ●      ● │    │                │
-                    └─────────┘     └──────────┘    │                │
-                                                    │ ●            ● │
-                     ~1.2 kg         ~1.5 kg        └────────────────┘
+                    ┌──────────┐    ┌────────────────┐
+                    │ ●      ● │    │ ●            ● │
+                    │          │    │                │
+                    │          │    │                │
+                    │ ●      ● │    │                │
+                    └──────────┘    │                │
+                                    │ ●            ● │
+                     ~1.5 kg        └────────────────┘
 
-                                                         ~4.5 kg
+                                         ~4.5 kg
 ```
 
 ## Torque Budget
@@ -186,19 +186,17 @@ With ~1 kg payload capacity, consider:
 - [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list
 - [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options (aluminum, hybrid, full print)
 
-## Comparison: All Rover Variants
+## Comparison: roverbot.v1 vs roverbot_XL.v1
 
-| Spec | Crawlbot | roverbot.v1 | roverbot_XL.v1 | RoverBot v1 |
-|------|----------|-----------|--------------|-------------|
-| Size (L×W) | 305×170mm | 300×200mm | 500×350mm | 610×305mm |
-| Weight | 1.2 kg | 1.5 kg | 4.5 kg | 8.3 kg |
-| Wheels | 95mm | 85mm | 100mm | 192mm |
-| Motors | Brushed DC | LX-16A | LX-16A | Pololu 37D |
-| Voltage | 7.4V | 7.4V | 7.4V | 12V |
-| Cost | ~$150* | ~$320 | ~$500 | ~$1000 |
-| Terrain | All-terrain | Light outdoor | Light outdoor | All-terrain |
-
-*Crawlbot uses converted RC chassis
+| Spec | roverbot.v1 | roverbot_XL.v1 |
+|------|-----------|--------------|
+| Size (L×W) | 300×200mm | 500×350mm |
+| Weight | 1.5 kg | 4.5 kg |
+| Wheels | 85mm | 100mm |
+| Motors | LX-16A | LX-16A |
+| Voltage | 7.4V | 7.4V |
+| Cost | ~$320 | ~$500 |
+| Terrain | Light outdoor | Light outdoor |
 
 ---
 
