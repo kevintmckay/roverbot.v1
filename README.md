@@ -2,67 +2,68 @@
 
 ![roverbot.v1](rover.png)
 
-A robust rover platform built around Hiwonder LX-16A serial bus servos with 1.7 kg payload capacity.
+A robust rover platform built around Hiwonder LX-16A serial bus servos with Sawppy-style 3D printed wheels and 1.9 kg payload capacity.
 
 ## Design Philosophy
 
-This platform maximizes size while maintaining a **3.5:1 thrust-to-weight ratio** for reliable indoor/outdoor performance. Designed for ROS2 learning, SLAM mapping, and expandability (robot arm, additional sensors).
+This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** for reliable indoor/outdoor performance. Designed for ROS2 learning, SLAM mapping, and expandability (robot arm, additional sensors).
 
 ## Specifications
 
 | Spec | Value |
 |------|-------|
 | Chassis | 500×350mm (20"×14") |
-| Wheels | 100mm × 40mm RC crawler |
+| Wheels | 120mm Sawppy-style (3D printed) |
 | Weight | ~4.5 kg max |
-| Ground Clearance | 50mm |
-| Max Speed | 0.28 m/s |
-| Thrust:Weight | 3.5:1 |
+| Ground Clearance | 60mm |
+| Max Speed | 0.34 m/s |
+| Thrust:Weight | 3:1 |
 | Frame | Aluminum tube + 3D printed |
 | Battery | 2S LiPo |
 | Runtime | ~4 hours |
-| Payload | 1.7 kg |
+| Payload | 1.9 kg |
 
 ## Torque Budget
 
-**LX-16A with 100mm wheels:**
+**LX-16A with 120mm Sawppy wheels:**
 - Torque: 20 kg.cm = 1.96 Nm per servo
-- Wheel radius: 50mm = 0.05m
-- Force per wheel: 1.96 ÷ 0.05 = **39.2 N**
-- Total thrust (4 wheels): **157 N**
+- Wheel radius: 60mm = 0.06m
+- Force per wheel: 1.96 ÷ 0.06 = **32.7 N**
+- Total thrust (4 wheels): **131 N**
 - Target weight: 4.5 kg = 44 N
-- **Thrust-to-weight: 3.5:1** ✓
+- **Thrust-to-weight: 3:1** ✓
 
 ### Performance Envelope
 
 | Scenario | Required Ratio | Max Weight | Status |
 |----------|---------------|------------|--------|
-| Flat indoor | 2:1 | 8.0 kg | ✓ |
-| Carpet/outdoor | 3:1 | 5.3 kg | ✓ |
-| 15° incline | 4:1 | 4.0 kg | marginal |
-| 20° incline | 5:1 | 3.2 kg | ✗ |
+| Flat indoor | 2:1 | 6.7 kg | ✓ |
+| Carpet/outdoor | 3:1 | 4.4 kg | ✓ |
+| 15° incline | 4:1 | 3.3 kg | marginal |
+| 20° incline | 5:1 | 2.7 kg | ✗ |
 
-**Recommended max weight: 4.5-5.0 kg** for versatile indoor/outdoor use.
+**Recommended max weight: 4.0-4.5 kg** for versatile indoor/outdoor use.
 
 ## Weight Budget
 
 | Component | Weight |
 |-----------|--------|
 | 4x LX-16A servos | 216g |
-| 4x 100mm RC crawler wheels (foam) | 400g |
-| 4x goBILDA couplers + hex adapters | 60g |
+| 4x 120mm Sawppy wheels (printed) | 300g |
+| 4x wheel hubs + couplers (printed) | 120g |
+| 8mm drive shafts | 20g |
 | Aluminum tube frame | 550g |
-| 3D printed brackets/mounts | 350g |
+| 3D printed brackets/mounts | 260g |
 | 2S 10000mAh LiPo | 450g |
 | Raspberry Pi 5 + case | 150g |
 | RPLidar A1 | 170g |
 | RealSense D435 (optional) | 72g |
 | BNO055 IMU | 10g |
 | Electronics (buck, wiring) | 150g |
-| Payload margin | ~1.2 kg |
-| **TOTAL** | **~2.8 kg base** |
+| Payload margin | ~1.0 kg |
+| **TOTAL** | **~2.6 kg base** |
 
-Leaves **~1.7 kg payload capacity** for accessories (robot arm, gripper, etc.)
+Leaves **~1.9 kg payload capacity** for accessories (robot arm, gripper, etc.)
 
 ## Frame Design
 
@@ -84,8 +85,8 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
     │   ┌─────┐                         ┌─────┐   │
     │   │ S1  │                         │ S2  │   │
     │   └──┬──┘                         └──┬──┘   │
-    │      ○ 100mm                    100mm ○     │
-    │                                             │
+    │      ○ 120mm                    120mm ○     │
+    │        Sawppy                   Sawppy      │
     │   ═══════════════════════════════════════   │  ← 1" Al tube  350mm
     │                                             │    (25mm sq)   (14")
     │            ┌─────────────────┐              │
@@ -94,8 +95,8 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
     │            └─────────────────┘              │
     │                                             │
     │   ═══════════════════════════════════════   │  ← 1" Al tube
-    │                                             │
-    │      ○ 100mm                    100mm ○     │
+    │        Sawppy                   Sawppy      │
+    │      ○ 120mm                    120mm ○     │
     │   ┌──┴──┐                         ┌──┴──┐   │
     │   │ S3  │                         │ S4  │   │
     │   └─────┘                         └─────┘   │
@@ -173,4 +174,4 @@ With ~1 kg payload capacity, consider:
 
 ---
 
-*roverbot.v1 - LX-16A servo platform with payload capacity*
+*roverbot.v1 - LX-16A servo platform with Sawppy-style wheels*

@@ -6,33 +6,35 @@ Maximum size LX-16A rover - 500mm × 350mm chassis, ~4.5kg target weight.
 
 ---
 
-## YOUR BUILD: ~$330
+## YOUR BUILD: ~$272
 
-### Drivetrain - $145
+### Drivetrain - $69
 
 | Qty | Item | Price | Best Source | URL |
 |-----|------|-------|-------------|-----|
 | 4 | Hiwonder LX-16A Serial Servo | $64 | Amazon | https://www.amazon.com/dp/B073WR3SK9 |
-| 4 | goBILDA 25T-to-6mm Shaft Coupler | $40 | goBILDA | https://www.gobilda.com/4001-series-clamping-servo-to-shaft-coupler-25-tooth-spline-to-6mm-round-bore/ |
-| 2 | Pololu 12mm Hex Adapter 6mm (2-pack) | $14 | Pololu | https://www.pololu.com/product/2686 |
-| 1 | 1.9" RC Crawler Wheels 100mm (4-pack) | $25 | Amazon | https://www.amazon.com/dp/B0B4ZX8QC9 |
+| 1 | 8mm Aluminum Rod 500mm | $5 | McMaster-Carr | https://www.mcmaster.com/4634t34 |
 
 **Alternative servo sources:**
 - [Hiwonder Direct](https://www.hiwonder.com/products/lx-16a): $16.99 each ($68 for 4)
 - [RobotShop](https://www.robotshop.com/products/hiwonder-hiwonder-lx-16a-full-metal-gear-serial-bus-servo-with-real-time-feedback-function-rc-robot-control-angle-240): check current price
 
-**Adapter Chain:**
+**Wheels:** Sawppy-style 3D printed (see 3D Printed Parts below)
+
+**Drive Train:**
 ```
-LX-16A Servo → goBILDA 25T-to-6mm → Pololu 6mm-to-12mm Hex → RC Crawler Wheel
+LX-16A Servo → 3D Printed Coupler (25T-to-8mm) → 8mm Shaft → Wheel Hub → Wheel
 ```
 
-### Frame - $47 (Aluminum + Printed)
+**Shaft cuts:** 4× 50mm drive shafts from 500mm rod
+
+### Frame - $56 (Aluminum + Printed)
 
 | Qty | Item | Price | Source |
 |-----|------|-------|--------|
 | 1 | 6ft 1" Al square tube | $17 | Home Depot |
 | 1 | M3/M4/M5 hardware kit | $15 | https://www.amazon.com/dp/B08JCKH31Q |
-| - | 3D printed parts (~350g PETG) | $15 | Print at home |
+| - | 3D printed parts (~600g PETG) | $24 | Print at home |
 
 **Frame cuts:** 2× 500mm + 2× 350mm = 1.7m total
 
@@ -65,41 +67,33 @@ LX-16A Servo → goBILDA 25T-to-6mm → Pololu 6mm-to-12mm Hex → RC Crawler Wh
 
 ---
 
-## TOTAL: ~$330
+## TOTAL: ~$272
 
 | Vendor | Items | Cost |
 |--------|-------|------|
-| **Amazon** | Servos, wheels, hardware, controller, buck | ~$134 |
-| **goBILDA** | 4x shaft couplers | ~$40 |
-| **Pololu** | 2x hex adapter 2-packs | ~$14 |
+| **Amazon** | Servos, hardware, controller, buck | ~$109 |
+| **McMaster-Carr** | 8mm aluminum rod | ~$5 |
 | **Adafruit** | RPLidar A1 | ~$100 |
 | **Home Depot** | Aluminum tube | ~$17 |
-| **3D Print** | Frame parts | ~$15 |
-| | **TOTAL** | **~$330** |
+| **3D Print** | Frame + wheels (~600g PETG) | ~$24 |
+| | **TOTAL** | **~$272** |
 
 ---
 
 ## QUICK ORDER LINKS
 
-### Amazon Cart (~$134)
+### Amazon Cart (~$109)
 ```
 https://www.amazon.com/dp/B073WR3SK9 - LX-16A Servos (4) = $64
-https://www.amazon.com/dp/B0B4ZX8QC9 - Crawler Wheels (4-pack) = $25
 https://www.amazon.com/dp/B09ZL6ZBBN - Servo Controller = $20
 https://www.amazon.com/dp/B08JCKH31Q - Hardware Kit = $15
 https://www.amazon.com/dp/B09VY3WQ61 - 5V Buck Converter = $10
 ```
 
-### goBILDA (~$40)
+### McMaster-Carr (~$5)
 ```
-https://www.gobilda.com/4001-series-clamping-servo-to-shaft-coupler-25-tooth-spline-to-6mm-round-bore/
-- 4x 25T-to-6mm Coupler @ $9.99 = $39.96
-```
-
-### Pololu (~$14)
-```
-https://www.pololu.com/product/2686
-- 2x 12mm Hex Adapter 6mm 2-pack @ $6.95 = $13.90
+https://www.mcmaster.com/4634t34
+- 1x 8mm Aluminum Rod 500mm = $5
 ```
 
 ### Adafruit (~$100)
@@ -135,26 +129,48 @@ https://www.adafruit.com/product/4010
 
 ---
 
+## 3D PRINTED PARTS
+
+Sawppy-style wheels from [upstream STL files](https://github.com/Roger-random/Sawppy_Rover/tree/master/STL).
+
+| Part | Qty | Weight Each | Total | Print Time |
+|------|-----|-------------|-------|------------|
+| Wheel (120mm) | 4 | 75g | 300g | 8 hrs each |
+| Wheel Hub | 4 | 20g | 80g | 30 min each |
+| LX-16A Coupler | 4 | 10g | 40g | 15 min each |
+| Corner bracket | 4 | 25g | 100g | 1 hr each |
+| Servo mount | 4 | 20g | 80g | 45 min each |
+| Electronics tray | 1 | 60g | 60g | 2 hrs |
+| Lidar mount | 1 | 20g | 20g | 30 min |
+| **Total** | - | - | **~680g** | **~42 hrs** |
+
+**STL Sources:**
+- Wheels, hubs, couplers: [Sawppy STL](https://github.com/Roger-random/Sawppy_Rover/tree/master/STL)
+- Frame brackets: Custom design for 1" aluminum tube
+
+---
+
 ## WEIGHT & POWER
 
 | Component | Weight |
 |-----------|--------|
 | 4× LX-16A servos | 216g |
-| 4× 100mm crawler wheels | 400g |
-| Couplers + adapters | 60g |
+| 4× 120mm printed wheels | 300g |
+| 4× wheel hubs + couplers | 120g |
+| 8mm drive shafts | 20g |
 | Aluminum frame | 550g |
-| 3D printed parts | 350g |
+| 3D printed brackets | 260g |
 | 2S LiPo | 450g |
 | Pi 5 + case + SSD | 200g |
 | RPLidar A1 | 170g |
 | IMU + electronics | 100g |
 | Wiring, hardware | 200g |
-| **Base weight** | **~2.7 kg** |
-| **Payload capacity** | **~1.8 kg** |
+| **Base weight** | **~2.6 kg** |
+| **Payload capacity** | **~1.9 kg** |
 
 **Power:** ~1.7A cruise, ~6A peak @ 7.4V
 **Runtime:** ~4 hours mixed use
 
 ---
 
-*roverbot.v1 - LX-16A platform with payload capacity*
+*roverbot.v1 - LX-16A platform with Sawppy-style wheels*
