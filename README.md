@@ -145,7 +145,7 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
          │
          ├── LX-16A Bus (direct 7.4V) ─── 4A peak
          │
-         └── 5V 5A Buck ─────────────┬── Pi 5 (3A)
+         └── 5V 6A Buck ─────────────┬── Pi 5 (3A)
                                      ├── RPLidar (0.5A)
                                      ├── RealSense (0.8A)
                                      └── IMU, misc (0.2A)
@@ -157,7 +157,7 @@ Runtime: 74Wh ÷ 18W = ~4 hours
 
 ## Expansion Options
 
-With ~1 kg payload capacity, consider:
+With ~1.9 kg payload capacity, consider:
 
 | Add-on | Weight | Notes |
 |--------|--------|-------|
@@ -169,7 +169,7 @@ With ~1 kg payload capacity, consider:
 
 ## Documents
 
-- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list
+- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$295)
 - [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options (aluminum, hybrid, full print)
 
 ---
