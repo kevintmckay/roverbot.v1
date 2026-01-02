@@ -2,139 +2,175 @@
 
 ![roverbot.v1](rover.png)
 
-A compact, lightweight rover built around Hiwonder LX-16A serial bus servos.
+A robust rover platform built around Hiwonder LX-16A serial bus servos with 1.7 kg payload capacity.
 
 ## Design Philosophy
 
-The LX-16A servos offer excellent value with built-in feedback, but their torque and voltage specs require a lighter platform. This rover is designed for:
-- Indoor navigation and mapping
-- Light outdoor use (sidewalks, short grass)
-- Educational robotics and ROS2 learning
-- Budget-friendly build (~$400-500)
+This platform maximizes size while maintaining a **3.5:1 thrust-to-weight ratio** for reliable indoor/outdoor performance. Designed for ROS2 learning, SLAM mapping, and expandability (robot arm, additional sensors).
 
 ## Specifications
 
 | Spec | Value |
 |------|-------|
-| Chassis | 12" x 8" (300mm x 200mm) |
-| Motors | 4x Hiwonder LX-16A serial servos |
-| Wheels | 85mm diameter, 33mm wide thick rubber |
-| Max Speed | ~0.5 mph (0.24 m/s) |
-| Ground Clearance | ~1.7" (42mm) |
-| Target Weight | 2.0-2.5 kg |
-| Battery | 2S LiPo 2200-5000mAh |
-| Runtime | ~1.5-2 hours |
-| Control | Raspberry Pi Zero 2W or Pi 5 |
+| Chassis | 500×350mm (20"×14") |
+| Wheels | 100mm × 40mm RC crawler |
+| Weight | ~4.5 kg max |
+| Ground Clearance | 50mm |
+| Max Speed | 0.28 m/s |
+| Thrust:Weight | 3.5:1 |
+| Frame | Aluminum tube + 3D printed |
+| Battery | 2S LiPo |
+| Runtime | ~4 hours |
+| Payload | 1.7 kg |
 
-## Servo Wiring
+## Torque Budget
 
-The LX-16A uses a daisy-chain serial bus - all 4 servos connect to a single UART:
+**LX-16A with 100mm wheels:**
+- Torque: 20 kg.cm = 1.96 Nm per servo
+- Wheel radius: 50mm = 0.05m
+- Force per wheel: 1.96 ÷ 0.05 = **39.2 N**
+- Total thrust (4 wheels): **157 N**
+- Target weight: 4.5 kg = 44 N
+- **Thrust-to-weight: 3.5:1** ✓
+
+### Performance Envelope
+
+| Scenario | Required Ratio | Max Weight | Status |
+|----------|---------------|------------|--------|
+| Flat indoor | 2:1 | 8.0 kg | ✓ |
+| Carpet/outdoor | 3:1 | 5.3 kg | ✓ |
+| 15° incline | 4:1 | 4.0 kg | marginal |
+| 20° incline | 5:1 | 3.2 kg | ✗ |
+
+**Recommended max weight: 4.5-5.0 kg** for versatile indoor/outdoor use.
+
+## Weight Budget
+
+| Component | Weight |
+|-----------|--------|
+| 4x LX-16A servos | 216g |
+| 4x 100mm RC crawler wheels (foam) | 400g |
+| 4x goBILDA couplers + hex adapters | 60g |
+| Aluminum tube frame | 550g |
+| 3D printed brackets/mounts | 350g |
+| 2S 10000mAh LiPo | 450g |
+| Raspberry Pi 5 + case | 150g |
+| RPLidar A1 | 170g |
+| RealSense D435 (optional) | 72g |
+| BNO055 IMU | 10g |
+| Electronics (buck, wiring) | 150g |
+| Payload margin | ~1.2 kg |
+| **TOTAL** | **~2.8 kg base** |
+
+Leaves **~1.7 kg payload capacity** for accessories (robot arm, gripper, etc.)
+
+## Frame Design
+
+Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
+
+| Option | Weight | Cost | Best For |
+|--------|--------|------|----------|
+| A: Aluminum Tube + Printed | 550g | $20 | Strongest, recommended |
+| B: Hybrid (Printed + Rod) | 450g | $15 | Lightest, all prints fit MK4S |
+| C: Full Print (Halves) | 600g | $15 | Large bed printers only |
+| D: Full Print (Panels) | 800g | $20 | Enclosed electronics bay |
+
+### Default: Aluminum Tube + Printed Brackets
 
 ```
-Pi/Arduino TX ──┬── Servo 1 ──┬── Servo 2 ──┬── Servo 3 ──┬── Servo 4
-                │             │             │             │
-              ID:1          ID:2          ID:3          ID:4
+        500mm (20")
+    ┌─────────────────────────────────────────────┐
+    │                                             │
+    │   ┌─────┐                         ┌─────┐   │
+    │   │ S1  │                         │ S2  │   │
+    │   └──┬──┘                         └──┬──┘   │
+    │      ○ 100mm                    100mm ○     │
+    │                                             │
+    │   ═══════════════════════════════════════   │  ← 1" Al tube  350mm
+    │                                             │    (25mm sq)   (14")
+    │            ┌─────────────────┐              │
+    │            │   Electronics   │              │
+    │            │      Bay        │              │
+    │            └─────────────────┘              │
+    │                                             │
+    │   ═══════════════════════════════════════   │  ← 1" Al tube
+    │                                             │
+    │      ○ 100mm                    100mm ○     │
+    │   ┌──┴──┐                         ┌──┴──┐   │
+    │   │ S3  │                         │ S4  │   │
+    │   └─────┘                         └─────┘   │
+    │                                             │
+    └─────────────────────────────────────────────┘
 ```
 
-- Baud rate: 115200
-- Protocol: Hiwonder serial protocol (documented)
-- Each servo has unique ID (0-253)
-- Feedback: position, temperature, voltage
+**Frame materials:**
+- 2x 500mm (20") aluminum square tube 25mm (1")
+- 2x 350mm (14") aluminum square tube 25mm (1")
+- 4x 3D printed corner brackets
+- 4x 3D printed servo mounts
+- 1x 3D printed electronics tray
 
-## Wheel Configuration
+## Sensor Configuration
 
 ```
-        FRONT
-    ┌───────────┐
-    │ [1]   [2] │   Servo IDs:
-    │           │   1 = Front Left
-    │           │   2 = Front Right
-    │           │   3 = Rear Left
-    │ [3]   [4] │   4 = Rear Right
-    └───────────┘
-        REAR
+                    FRONT
+         ┌─────────────────────────┐
+         │      [RPLidar A1]       │  ← Elevated on 50mm standoff
+         │           ○             │
+         │                         │
+         │    [RealSense D435]     │  ← Front-facing depth
+         │         ═══             │
+         │                         │
+         │  ┌─────────────────┐    │
+         │  │   [Pi 5]        │    │
+         │  │   [IMU]         │    │
+         │  │   [Power dist]  │    │
+         │  └─────────────────┘    │
+         │                         │
+         │      [Battery Bay]      │
+         │     ┌───────────┐       │
+         │     │  10Ah 2S  │       │
+         │     └───────────┘       │
+         └─────────────────────────┘
+                    REAR
 ```
 
 ## Power Architecture
 
 ```
-2S LiPo (7.4V)
-    │
-    ├── LX-16A Servos (direct, 6-8.4V) ─── ~4A peak
-    │
-    └── 5V Buck Converter
-            │
-            ├── Raspberry Pi ─── ~2A
-            └── Sensors ─── ~0.5A
+2S LiPo 10000mAh (7.4V, 74Wh)
+         │
+         ├──[20A Fuse]
+         │
+         ├── LX-16A Bus (direct 7.4V) ─── 4A peak
+         │
+         └── 5V 5A Buck ─────────────┬── Pi 5 (3A)
+                                     ├── RPLidar (0.5A)
+                                     ├── RealSense (0.8A)
+                                     └── IMU, misc (0.2A)
 
-Total: ~30W peak, ~15W cruise
+Peak draw: ~35W
+Cruise draw: ~18W
+Runtime: 74Wh ÷ 18W = ~4 hours
 ```
+
+## Expansion Options
+
+With ~1 kg payload capacity, consider:
+
+| Add-on | Weight | Notes |
+|--------|--------|-------|
+| 3-DOF robot arm | 400-800g | Pick and place |
+| Pan-tilt camera | 150g | Surveillance |
+| Speaker + mic array | 100g | Voice interaction |
+| LED light bar | 50g | Night operation |
+| Additional sensors | 200g | Ultrasonic, gas, etc. |
 
 ## Documents
 
-- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list with links
-- [CHASSIS_BUILD.md](CHASSIS_BUILD.md) - Frame design and assembly
-
-## Variants
-
-![roverbot_XL.v1](roverXL.png)
-
-**Want a bigger rover?** See [roverbot_XL.v1](../roverbot_XL.v1/) - same LX-16A servos, but:
-- 500×350mm chassis (vs 300×200mm)
-- 100mm RC crawler wheels with deep lugs
-- ~4.5 kg with 1.7 kg payload capacity
-- Aluminum tube frame
-- ~$540 vs ~$320
-
-## Torque Analysis
-
-LX-16A with 85mm wheels:
-- Torque: 20 kg.cm = 1.96 Nm
-- Wheel radius: 42.5mm = 0.0425m
-- Force per wheel: 1.96 / 0.0425 = **46 N**
-- 4 wheels total: **184 N thrust**
-- Rover weight: 1.5 kg = 14.7 N
-
-Thrust-to-weight ratio: **12:1** - excellent for indoor and light outdoor use.
-
-## Speed Calculation
-
-- Servo speed: 0.19 sec/60° at 7.4V = 316°/sec
-- In continuous mode: ~53 RPM equivalent
-- Wheel circumference: π × 85mm = 267mm
-- Speed: 53 × 0.267m/min = 14.2 m/min = **0.24 m/s (0.5 mph)**
-
-Adequate for indoor mapping and light outdoor use.
-
-## Sensor Options
-
-### Minimum (SLAM-capable)
-- RPLidar A1 (or cheaper LD19)
-
-### Enhanced
-- RPLidar A1 + IMU (BNO055 or MPU6050)
-- Optional: Ultrasonic sensors for close obstacle detection
-
-### No depth camera recommended
-The D435 is overkill for this platform. A simple 2D lidar is sufficient.
-
-## Compute Options
-
-### Option A: Raspberry Pi Zero 2W (~$15)
-- Lightweight, low power
-- Adequate for basic SLAM
-- Limited USB (need hub for lidar)
-
-### Option B: Raspberry Pi 5 (already owned)
-- Overkill but works
-- Easy development
-- Higher power draw
-
-### Option C: ESP32 + Remote Compute
-- ESP32 handles motor control
-- Streams sensor data to laptop/desktop
-- Lowest on-board cost
+- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list
+- [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options (aluminum, hybrid, full print)
 
 ---
 
-*A simpler, cheaper path to learning ROS2 and mobile robotics.*
+*roverbot.v1 - LX-16A servo platform with payload capacity*

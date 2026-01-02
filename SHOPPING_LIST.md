@@ -1,98 +1,123 @@
 # roverbot.v1 Shopping List
 
-A lightweight rover built around LX-16A serial bus servos.
+Maximum size LX-16A rover - 500mm × 350mm chassis, ~4.5kg target weight.
 
 ---
 
-## TIER 1: ESSENTIAL (~$320)
+## TIER 1: ESSENTIAL (~$430)
 
-### Drivetrain - $120
+### Drivetrain - $155
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
 | 4 | Hiwonder LX-16A Serial Servo | $64 | https://www.amazon.com/dp/B073WR3SK9 |
 | 4 | goBILDA 25T-to-6mm Shaft Coupler | $40 | https://www.gobilda.com/4001-series-clamping-servo-to-shaft-coupler-25-tooth-spline-to-6mm-round-bore/ |
-| 4 | 85mm Rubber Wheel w/ 6mm Coupling | $16 | https://www.amazon.com/dp/B0DHZFMGZ5 |
+| 1 | 6mm-to-12mm Hex Adapter (4-pack) | $10 | https://www.amazon.com/dp/B07J19PGNN |
+| 1 | 1.9" RC Crawler Wheels 100mm (4-pack) | $25 | https://www.amazon.com/dp/B0B4ZX8QC9 |
+| 4 | M4x8mm set screws (for hex adapters) | $6 | https://www.amazon.com/dp/B07L3S64YP |
 
-**Wheel Specs:**
-- Diameter: 85mm (3.3")
-- Width: 33mm (1.3") - thick rubber with sponge liner
-- Hub: Metal coupling, 6mm bore
-- Tread: High-grip rubber, excellent for indoor/outdoor
+**Wheel Specs (1.9" RC Crawler Style):**
+- Diameter: 100mm (3.9")
+- Width: 36-40mm (1.4-1.6") - **CHUNKY**
+- Hub: 12mm hex (standard RC)
+- Material: Soft rubber with **foam/sponge insert**
+- Tread: Deep off-road lugs
 
-**Assembly:** Servo → goBILDA coupler → 6mm stub shaft → Wheel hub
+**Adapter Chain:**
+```
+LX-16A Servo → goBILDA 25T-to-6mm → 6mm Hex Adapter → 12mm Hex Wheel
+     ▼              ▼                    ▼                ▼
+  [spline]      [coupler]           [brass hex]      [crawler tire]
+```
 
-### Frame - $25 (3D Printed)
+### Frame - $60 (Aluminum + Printed)
 
 | Qty | Item | Price | Source |
 |-----|------|-------|--------|
-| 1 | Main chassis plate | ~$5 | 3D print (~150g PETG) |
-| 4 | Servo mount brackets | ~$3 | 3D print (~80g PETG) |
-| 1 | Electronics tray | ~$2 | 3D print (~60g PETG) |
-| 1 | Sensor mounts | ~$2 | 3D print (~50g PETG) |
-| 1 | M3 hardware kit (screws, nuts, standoffs) | $12 | https://www.amazon.com/dp/B08JCKH31Q |
+| 2 | 1" Al square tube 500mm | $10 | Home Depot / metals supplier |
+| 2 | 1" Al square tube 350mm | $7 | Home Depot / metals supplier |
+| 4 | 3D printed corner brackets | $4 | ~100g PETG |
+| 4 | 3D printed servo mounts | $4 | ~100g PETG |
+| 1 | 3D printed electronics tray | $3 | ~80g PETG |
+| 1 | 3D printed sensor mounts | $2 | ~60g PETG |
+| 1 | M4/M5 hardware kit | $15 | https://www.amazon.com/dp/B08JCKH31Q |
+| 1 | M3 hardware kit | $12 | https://www.amazon.com/dp/B08JCKH31Q |
 
-**Frame Dimensions:** 300mm x 200mm (12" x 8")
+**Frame cuts:** 2× 500mm + 2× 350mm = 1.7m total (one 6ft tube)
 
-### Sensors - $50
+### Sensors - $99
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 1 | LD19 Lidar (budget option) | $50 | https://www.amazon.com/dp/B0B1XDNPN5 |
+| 1 | RPLidar A1 | $99 | https://www.amazon.com/dp/B07TJW5SXF |
 
-*Alternative: RPLidar A1 ($99) for better range/accuracy*
-
-### Control - $30
+### Control - $15
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
 | 1 | Hiwonder Serial Servo Controller | $15 | https://www.amazon.com/dp/B0749BVPSQ |
-| 1 | Raspberry Pi Zero 2W | $15 | https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/ |
 
-*Alternative: Use Pi 5 (already owned) and skip the servo controller - connect servos directly to Pi UART*
+*Note: Use already-owned Pi 5 as main compute*
 
-### Power System - $45
+### Power System - $65
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 1 | 2S LiPo 5000mAh | $25 | https://www.amazon.com/dp/B08QCXK4KV |
-| 1 | 5V 3A Buck Converter | $8 | https://www.amazon.com/dp/B01MQGMOKI |
+| 1 | 2S LiPo 10000mAh | $45 | https://www.amazon.com/dp/B0B5B8F8QH |
+| 1 | 5V 5A Buck Converter | $10 | https://www.amazon.com/dp/B09VY3WQ61 |
 | 1 | XT60 Connectors (5 pairs) | $8 | https://www.amazon.com/dp/B07VRZR5TK |
+| 1 | Inline Fuse Holder + 20A Fuse | $8 | https://www.amazon.com/dp/B07PZMHGVK |
 | 1 | LiPo Voltage Alarm | $4 | https://www.amazon.com/dp/B08P72MKJ5 |
 
-### Wiring & Misc - $20
+### Wiring - $25
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 1 | JST-XH 3-pin cables (servo extensions) | $8 | https://www.amazon.com/dp/B01DUC1PFE |
-| 1 | MicroSD Card 32GB | $8 | https://www.amazon.com/dp/B07FCMBLV6 |
-| 1 | USB OTG Hub for Pi Zero | $4 | https://www.amazon.com/dp/B01JL837X8 |
+| 1 | JST-XH 3-pin cables (servo ext) | $8 | https://www.amazon.com/dp/B01DUC1PFE |
+| 1 | 14AWG Silicone Wire | $10 | https://www.amazon.com/dp/B01KCPL3GW |
+| 1 | Power Distribution Block | $7 | https://www.amazon.com/dp/B08G8PPGLR |
 
-### **TIER 1 SUBTOTAL: ~$320**
+### **TIER 1 SUBTOTAL: ~$430**
 
 ---
 
-## TIER 2: ENHANCED (~$70)
+## TIER 2: ENHANCED (~$140)
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 1 | RPLidar A1 (upgrade from LD19) | +$49 | https://www.amazon.com/dp/B07TJW5SXF |
-| 1 | MPU6050 IMU (cheap but functional) | $6 | https://www.amazon.com/dp/B00LP25V1A |
-| 2 | HC-SR04 Ultrasonic Sensors | $6 | https://www.amazon.com/dp/B07RGB4W8V |
-| 1 | Pi Camera Module v3 | $25 | https://www.raspberrypi.com/products/camera-module-3/ |
+| 1 | Intel RealSense D435 | $180 | https://www.intelrealsense.com/depth-camera-d435/ |
+| 1 | Adafruit BNO055 IMU | $25 | https://www.adafruit.com/product/4646 |
+| 1 | Powered USB 3.0 Hub | $20 | https://www.amazon.com/dp/B00JX1ZS5O |
 
-### **TIER 2 SUBTOTAL: ~$70** (net +$35 if upgrading lidar)
+*RealSense optional - RPLidar sufficient for 2D SLAM*
+
+### **TIER 2 SUBTOTAL: ~$225**
 
 ---
 
-## ALREADY OWNED (Potential Use)
+## TIER 3: EXPANSION (~$150)
 
-| Item | Notes |
-|------|-------|
-| Raspberry Pi 5 16GB | Overkill but works - skip Pi Zero if using this |
-| BNO055 IMU | Better than MPU6050 |
-| GPS module | Not needed for indoor use |
-| 4S LiPo batteries | **Not compatible** - need 2S for LX-16A |
+| Qty | Item | Price | URL |
+|-----|------|-------|-----|
+| 1 | 3-DOF Robot Arm Kit | $80 | https://www.amazon.com/dp/B07GWNPM5W |
+| 1 | Pan-Tilt Camera Mount | $25 | https://www.amazon.com/dp/B07Q2RQYPF |
+| 2 | SG90 Micro Servos | $8 | https://www.amazon.com/dp/B07MLR1498 |
+| 1 | LED Light Bar 12V | $15 | https://www.amazon.com/dp/B09GXHCFXF |
+| 1 | Speaker + Amp Module | $12 | https://www.amazon.com/dp/B0756GLQWL |
+
+### **TIER 3 SUBTOTAL: ~$140**
+
+---
+
+## ALREADY OWNED
+
+| Item | Value | Notes |
+|------|-------|-------|
+| Raspberry Pi 5 16GB | $90 | Main compute |
+| Pi 5 Aluminum Case | $20 | Passive cooling |
+| Transcend USB SSD | $30 | ROS2 storage |
+| BNO055 IMU | $25 | Skip Tier 2 IMU |
+| Various LiPos | - | Need 2S specifically |
 
 ---
 
@@ -100,28 +125,32 @@ A lightweight rover built around LX-16A serial bus servos.
 
 | Configuration | Cost |
 |---------------|------|
-| Tier 1 (Pi Zero, LD19) | ~$320 |
-| Tier 1 + Pi 5 instead | ~$305 (skip Pi Zero) |
-| Tier 1 + Tier 2 | ~$390 |
-| Using Pi 5 + BNO055 owned | ~$280 |
+| Tier 1 (Essential) | ~$430 |
+| Tier 1 + Tier 2 | ~$655 |
+| Tier 1 + 2 + 3 (Full) | ~$795 |
+| Using owned Pi 5 + IMU | -$115 |
+| **Practical build** | **~$540** |
 
 ---
 
-## WEIGHT BUDGET
+## WEIGHT BREAKDOWN
 
 | Component | Weight |
 |-----------|--------|
-| 4x LX-16A servos | 216g |
-| 4x 85mm rubber wheels | ~200g |
-| 4x goBILDA couplers | 24g |
-| 3D printed frame | ~350g |
-| 2S 5000mAh LiPo | ~270g |
-| Raspberry Pi + electronics | ~150g |
-| Lidar | ~170g |
-| Wiring, misc | ~100g |
-| **TOTAL** | **~1.5 kg** |
-
-Well under the 2.5kg design target - excellent thrust margin.
+| 4× LX-16A servos | 216g |
+| 4× 100mm crawler wheels (foam filled) | 400g |
+| 4× goBILDA couplers + hex adapters | 60g |
+| Aluminum frame (1.7m tube) | 550g |
+| 3D printed parts | 350g |
+| 2S 10000mAh LiPo | 450g |
+| Raspberry Pi 5 + case + SSD | 200g |
+| RPLidar A1 | 170g |
+| RealSense D435 | 72g |
+| IMU + electronics | 100g |
+| Wiring, hardware | 200g |
+| **SUBTOTAL** | **~2.8 kg** |
+| **Payload capacity** | **~1.7 kg** |
+| **MAX TOTAL** | **~4.5 kg** |
 
 ---
 
@@ -129,83 +158,74 @@ Well under the 2.5kg design target - excellent thrust margin.
 
 | Component | Current @ 7.4V |
 |-----------|----------------|
-| 4x LX-16A (cruise) | 0.4A |
-| 4x LX-16A (peak) | 4.0A |
-| Raspberry Pi (via 5V) | 0.5A equiv |
-| Lidar | 0.3A equiv |
-| **Total Cruise** | **~1.5A** |
-| **Total Peak** | **~5A** |
+| 4× LX-16A (cruise) | 0.5A |
+| 4× LX-16A (peak) | 5.0A |
+| Pi 5 (via 5V buck) | 0.7A equiv |
+| RPLidar A1 | 0.15A equiv |
+| RealSense D435 | 0.25A equiv |
+| IMU + misc | 0.05A equiv |
+| **Total Cruise** | **~1.7A (12W)** |
+| **Total Peak** | **~6.0A (44W)** |
 
-5000mAh 2S battery runtime: 5000mAh / 1500mA = **~3.3 hours cruise**
+**Runtime:** 10000mAh ÷ 1700mA = **~5.8 hours cruise**
 
----
-
-## SERVO BUS WIRING
-
-All 4 servos daisy-chain on a single 3-wire bus:
-
-```
-Power (7.4V) ────┬────┬────┬────┐
-                 │    │    │    │
-GND ─────────────┼────┼────┼────┤
-                 │    │    │    │
-Signal ──────────┼────┼────┼────┤
-                 │    │    │    │
-              [S1]  [S2]  [S3]  [S4]
-               FL    FR    RL    RR
-```
-
-Each servo has unique ID (set via Hiwonder debug tool):
-- ID 1: Front Left
-- ID 2: Front Right
-- ID 3: Rear Left
-- ID 4: Rear Right
+Realistically with mixed use: **~4 hours**
 
 ---
 
 ## ORDER BY VENDOR
 
-### Amazon - ~$211
+### Amazon - ~$350
 ```
 Servos:
-- https://www.amazon.com/dp/B073WR3SK9 - LX-16A x4 = $64
+- https://www.amazon.com/dp/B073WR3SK9 - LX-16A ×4 = $64
 
-Wheels:
-- https://www.amazon.com/dp/B0DHZFMGZ5 - 85mm Rubber Wheel 6mm x4 = $16
-  (Select 6MM aperture option)
+Wheels/Adapters:
+- https://www.amazon.com/dp/B0B4ZX8QC9 - 1.9" Crawler Wheels 100mm (4-pack) = $25
+- https://www.amazon.com/dp/B07J19PGNN - 6mm-to-12mm Hex Adapter (4-pack) = $10
+- https://www.amazon.com/dp/B07L3S64YP - Hex adapter set screws = $6
 
 Lidar:
-- https://www.amazon.com/dp/B0B1XDNPN5 - LD19 Lidar = $50
+- https://www.amazon.com/dp/B07TJW5SXF - RPLidar A1 = $99
 
 Power:
-- https://www.amazon.com/dp/B08QCXK4KV - 2S 5000mAh LiPo = $25
-- https://www.amazon.com/dp/B01MQGMOKI - 5V Buck = $8
+- https://www.amazon.com/dp/B0B5B8F8QH - 2S 10000mAh = $45
+- https://www.amazon.com/dp/B09VY3WQ61 - 5V 5A Buck = $10
 - https://www.amazon.com/dp/B07VRZR5TK - XT60 = $8
+- https://www.amazon.com/dp/B07PZMHGVK - Fuse = $8
 - https://www.amazon.com/dp/B08P72MKJ5 - LiPo Alarm = $4
+- https://www.amazon.com/dp/B08G8PPGLR - Power Dist = $7
 
 Wiring/Control:
 - https://www.amazon.com/dp/B0749BVPSQ - Servo Controller = $15
 - https://www.amazon.com/dp/B01DUC1PFE - Servo cables = $8
-- https://www.amazon.com/dp/B07FCMBLV6 - MicroSD = $8
-- https://www.amazon.com/dp/B01JL837X8 - USB OTG = $4
+- https://www.amazon.com/dp/B01KCPL3GW - 14AWG Wire = $10
 
 Hardware:
-- https://www.amazon.com/dp/B08JCKH31Q - M3 kit = $12
+- https://www.amazon.com/dp/B08JCKH31Q - M3/M4/M5 kit = $27
 ```
 
 ### goBILDA - $40
 ```
 https://www.gobilda.com/4001-series-clamping-servo-to-shaft-coupler-25-tooth-spline-to-6mm-round-bore/
-- 4x 25T Spline to 6mm Shaft Coupler
-  @ $9.99 each = $39.96
+- 4× 25T Spline to 6mm Shaft Coupler @ $9.99 = $39.96
 ```
 
-### Raspberry Pi - $15
+### Home Depot / Metal Supplier - $20
 ```
-https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
-- 1x Raspberry Pi Zero 2W = $15
+- 1× 6ft 1" aluminum square tube (cut to 2×500mm + 2×350mm)
+  ~$15-20
+```
+
+### 3D Printing - ~$15 filament
+```
+- Corner brackets ×4: 100g PETG
+- Servo mounts ×4: 100g PETG
+- Electronics tray: 80g PETG
+- Sensor mounts: 60g PETG
+Total: ~350g PETG @ $25/kg = ~$9 + time
 ```
 
 ---
 
-*Generated for roverbot.v1 - LX-16A based platform*
+*roverbot.v1 - LX-16A platform with payload capacity*
