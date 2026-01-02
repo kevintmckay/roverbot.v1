@@ -2,16 +2,20 @@
 
 The 500×350mm chassis is too large for most 3D printer beds. Here are the build options.
 
+**Note:** All options use Sawppy-style 3D printed wheels (120mm). Add ~32 hours print time for wheels, hubs, and couplers. See [SHOPPING_LIST.md](SHOPPING_LIST.md) for complete build cost (~$295).
+
 ---
 
 ## Quick Comparison
 
 | Option | Weight | Rigidity | Cost | Print Time | Difficulty |
 |--------|--------|----------|------|------------|------------|
-| A: Aluminum Tube | 550g | Best | $20 | 4 hrs (brackets only) | Easy |
-| B: Hybrid Modular | 450g | Very Good | $15 | 8 hrs | Easy |
-| C: Full Print (Halves) | 600g | Good | $15 | 16 hrs | Medium |
-| D: Full Print (Panels) | 800g | Good | $20 | 20 hrs | Medium |
+| A: Aluminum Tube | 550g | Best | $20 | 4 hrs + 32 hrs wheels | Easy |
+| B: Hybrid Modular | 450g | Very Good | $15 | 8 hrs + 32 hrs wheels | Easy |
+| C: Full Print (Halves) | 600g | Good | $15 | 16 hrs + 32 hrs wheels | Medium |
+| D: Full Print (Panels) | 800g | Good | $20 | 20 hrs + 32 hrs wheels | Medium |
+
+*Frame cost only - see SHOPPING_LIST.md for full build*
 
 ---
 
@@ -297,6 +301,13 @@ Print flat panels and assemble into box frame structure.
 
 ## STL Files Needed
 
+### Wheels (All Options) - from [Sawppy STL](https://github.com/Roger-random/Sawppy_Rover/tree/master/STL)
+```
+Wheel.stl                 (×4, 120mm Sawppy-style)
+Wheel Hub.stl             (×4)
+LX-16A - Coupler.stl      (×4)
+```
+
 ### Option A (Al Tube)
 ```
 corner_bracket_left.stl   (×2, mirror for right)
@@ -329,4 +340,4 @@ servo_mount.stl           (×4)
 
 ---
 
-*Design these in Fusion 360, FreeCAD, or OnShape. Search Printables/Thingiverse for similar designs to adapt.*
+*Frame brackets: Design in Fusion 360, FreeCAD, or OnShape. Search Printables/Thingiverse for similar designs to adapt.*
