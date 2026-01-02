@@ -2,7 +2,7 @@
 
 The 500×350mm chassis is too large for most 3D printer beds. Here are the build options.
 
-**Note:** All options use Sawppy-style 3D printed wheels (120mm). Add ~32 hours print time for wheels, hubs, and couplers. See [SHOPPING_LIST.md](SHOPPING_LIST.md) for complete build cost (~$295).
+**Note:** All options use Sawppy-style 3D printed wheels (120mm). Add ~32 hours print time for wheels, hubs, and couplers. See [SHOPPING_LIST.md](SHOPPING_LIST.md) for complete build cost (~$270).
 
 ---
 

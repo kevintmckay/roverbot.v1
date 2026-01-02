@@ -18,7 +18,7 @@ This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** 
 | Ground Clearance | 60mm |
 | Max Speed | 0.34 m/s |
 | Thrust:Weight | 3:1 |
-| Frame | Aluminum tube + 3D printed |
+| Frame | Fully 3D printed (panels) |
 | Battery | 2S LiPo |
 | Runtime | ~4 hours |
 | Payload | 1.9 kg |
@@ -52,7 +52,7 @@ This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** 
 | 4x 120mm Sawppy wheels (printed) | 300g |
 | 4x wheel hubs + couplers (printed) | 120g |
 | 8mm drive shafts | 20g |
-| Aluminum tube frame | 550g |
+| 3D printed frame (panels) | 800g |
 | 3D printed brackets/mounts | 260g |
 | 2S 10000mAh LiPo | 450g |
 | Raspberry Pi 5 + case | 150g |
@@ -60,10 +60,10 @@ This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** 
 | RealSense D435 (optional) | 72g |
 | BNO055 IMU | 10g |
 | Electronics (buck, wiring) | 150g |
-| Payload margin | ~1.0 kg |
-| **TOTAL** | **~2.6 kg base** |
+| Payload margin | ~0.8 kg |
+| **TOTAL** | **~2.9 kg base** |
 
-Leaves **~1.9 kg payload capacity** for accessories (robot arm, gripper, etc.)
+Leaves **~1.6 kg payload capacity** for accessories (robot arm, gripper, etc.)
 
 ## Frame Design
 
@@ -71,30 +71,31 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
 
 | Option | Weight | Cost | Best For |
 |--------|--------|------|----------|
-| A: Aluminum Tube + Printed | 550g | $20 | Strongest, recommended |
+| A: Aluminum Tube + Printed | 550g | $20 | Strongest, most adjustable |
 | B: Hybrid (Printed + Rod) | 450g | $15 | Lightest, all prints fit MK4S |
 | C: Full Print (Halves) | 600g | $15 | Large bed printers only |
-| D: Full Print (Panels) | 800g | $20 | Enclosed electronics bay |
+| **D: Full Print (Panels)** | 800g | $20 | **Default - fits standard beds** |
 
-### Default: Aluminum Tube + Printed Brackets
+### Default: Panel Construction (Option D)
 
 ```
         500mm (20")
     ┌─────────────────────────────────────────────┐
+    │  ┌───────────────────────────────────────┐  │
+    │  │         TOP DECK (split in 2)         │  │
+    │  └───────────────────────────────────────┘  │
     │                                             │
     │   ┌─────┐                         ┌─────┐   │
-    │   │ S1  │                         │ S2  │   │
-    │   └──┬──┘                         └──┬──┘   │
+    │   │ S1  │                         │ S2  │   │  350mm
+    │   └──┬──┘                         └──┬──┘   │  (14")
     │      ○ 120mm                    120mm ○     │
     │        Sawppy                   Sawppy      │
-    │   ═══════════════════════════════════════   │  ← 1" Al tube  350mm
-    │                                             │    (25mm sq)   (14")
+    │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │  ← Side rail
     │            ┌─────────────────┐              │
     │            │   Electronics   │              │
     │            │      Bay        │              │
     │            └─────────────────┘              │
-    │                                             │
-    │   ═══════════════════════════════════════   │  ← 1" Al tube
+    │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │  ← Side rail
     │        Sawppy                   Sawppy      │
     │      ○ 120mm                    120mm ○     │
     │   ┌──┴──┐                         ┌──┴──┐   │
@@ -104,12 +105,14 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
     └─────────────────────────────────────────────┘
 ```
 
-**Frame materials:**
-- 2x 500mm (20") aluminum square tube 25mm (1")
-- 2x 350mm (14") aluminum square tube 25mm (1")
-- 4x 3D printed corner brackets
-- 4x 3D printed servo mounts
-- 1x 3D printed electronics tray
+**3D printed frame parts (~800g, ~20 hrs):**
+- 2x Top deck halves (250×175mm each)
+- 2x Side rails (500×40×40mm, print diagonal)
+- 2x End rails (350×40×40mm)
+- 4x Corner gussets
+- 4x Servo mounts
+- 1x Electronics tray
+- 1x Lidar mount
 
 ## Sensor Configuration
 
@@ -169,7 +172,7 @@ With ~1.9 kg payload capacity, consider:
 
 ## Documents
 
-- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$295)
+- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$270)
 - [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options (aluminum, hybrid, full print)
 
 ---
