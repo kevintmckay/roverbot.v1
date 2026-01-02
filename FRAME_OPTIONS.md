@@ -1,4 +1,4 @@
-# Mid-Rover XL Frame Options
+# roverbot_XL.v1 Frame Options
 
 The 500×350mm chassis is too large for most 3D printer beds. Here are the build options.
 

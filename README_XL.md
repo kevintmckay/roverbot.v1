@@ -1,14 +1,14 @@
-# Mid-Rover XL: Maximum Size LX-16A Platform
+# roverbot_XL.v1: Maximum Size LX-16A Platform
 
 A larger rover that pushes the LX-16A servos to their practical limits.
 
 ## Design Philosophy
 
-The standard mid-rover is conservatively sized with a 12:1 thrust-to-weight ratio. This XL variant maximizes the platform size while maintaining a **3:1 thrust-to-weight ratio** for reliable indoor/outdoor performance.
+The standard roverbot.v1 is conservatively sized with a 12:1 thrust-to-weight ratio. This XL variant maximizes the platform size while maintaining a **3:1 thrust-to-weight ratio** for reliable indoor/outdoor performance.
 
 ## Specifications
 
-| Spec | Mid-Rover | Mid-Rover XL |
+| Spec | roverbot.v1 | roverbot_XL.v1 |
 |------|-----------|--------------|
 | Chassis | 300×200mm (12"×8") | **500×350mm (20"×14")** |
 | Wheels | 85mm × 33mm rubber | **100mm × 40mm RC crawler** |
@@ -23,7 +23,7 @@ The standard mid-rover is conservatively sized with a 12:1 thrust-to-weight rati
 ## Size Comparison
 
 ```
-                    Crawlbot        Mid-Rover       Mid-Rover XL
+                    Crawlbot        roverbot.v1     roverbot_XL.v1
                     305×170mm       300×200mm       500×350mm
 
                     ┌─────────┐     ┌──────────┐    ┌────────────────┐
@@ -188,7 +188,7 @@ With ~1 kg payload capacity, consider:
 
 ## Comparison: All Rover Variants
 
-| Spec | Crawlbot | Mid-Rover | Mid-Rover XL | RoverBot v1 |
+| Spec | Crawlbot | roverbot.v1 | roverbot_XL.v1 | RoverBot v1 |
 |------|----------|-----------|--------------|-------------|
 | Size (L×W) | 305×170mm | 300×200mm | 500×350mm | 610×305mm |
 | Weight | 1.2 kg | 1.5 kg | 4.5 kg | 8.3 kg |
@@ -202,4 +202,4 @@ With ~1 kg payload capacity, consider:
 
 ---
 
-*Mid-Rover XL - Maximum practical size for LX-16A servo platform*
+*roverbot_XL.v1 - Maximum practical size for LX-16A servo platform*

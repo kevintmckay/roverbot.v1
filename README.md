@@ -1,6 +1,6 @@
-# Mid-Rover: LX-16A Serial Bus Rover
+# roverbot.v1: LX-16A Serial Bus Rover
 
-![Mid-Rover](rover.png)
+![roverbot.v1](rover.png)
 
 A compact, lightweight rover built around Hiwonder LX-16A serial bus servos.
 
@@ -28,7 +28,7 @@ The LX-16A servos offer excellent value with built-in feedback, but their torque
 
 ## Key Differences from RoverBot v1
 
-| Aspect | Mid-Rover | RoverBot v1 |
+| Aspect | roverbot.v1 | RoverBot v1 |
 |--------|-----------|-------------|
 | Motors | LX-16A servos ($64) | Pololu 37D ($284) |
 | Motor drivers | None needed | 2x Cytron MDD10A |
@@ -90,9 +90,9 @@ Total: ~30W peak, ~15W cruise
 
 ## Variants
 
-![Mid-Rover XL](roverXL.png)
+![roverbot_XL.v1](roverXL.png)
 
-**Want a bigger rover?** See [Mid-Rover XL](../mid-rover-xl/) - same LX-16A servos, but:
+**Want a bigger rover?** See [roverbot_XL.v1](../roverbot_XL.v1/) - same LX-16A servos, but:
 - 500×350mm chassis (vs 300×200mm)
 - 100mm RC crawler wheels with deep lugs
 - ~4.5 kg with 1.7 kg payload capacity

@@ -1,4 +1,4 @@
-# Mid-Rover XL Shopping List
+# roverbot_XL.v1 Shopping List
 
 Maximum size LX-16A rover - 500mm × 350mm chassis, ~4.5kg target weight.
 
@@ -228,9 +228,9 @@ Total: ~350g PETG @ $25/kg = ~$9 + time
 
 ---
 
-## COMPARISON: Mid-Rover vs Mid-Rover XL
+## COMPARISON: roverbot.v1 vs roverbot_XL.v1
 
-| Aspect | Mid-Rover | Mid-Rover XL | Difference |
+| Aspect | roverbot.v1 | roverbot_XL.v1 | Difference |
 |--------|-----------|--------------|------------|
 | Size | 300×200mm | 500×350mm | +67% |
 | Weight | 1.5 kg | 4.5 kg | +200% |
@@ -247,4 +247,4 @@ Total: ~350g PETG @ $25/kg = ~$9 + time
 
 ---
 
-*Mid-Rover XL - Maximum practical LX-16A platform*
+*roverbot_XL.v1 - Maximum practical LX-16A platform*

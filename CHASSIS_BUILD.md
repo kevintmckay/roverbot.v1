@@ -1,4 +1,4 @@
-# Mid-Rover Chassis Build Guide
+# roverbot.v1 Chassis Build Guide
 
 A 3D-printed chassis designed for Hiwonder LX-16A serial servos.
 
@@ -286,4 +286,4 @@ Alternatively, search Thingiverse/Printables for "LX-16A rover" or adapt existin
 
 ---
 
-*Mid-Rover Chassis Build Guide - LX-16A Platform*
+*roverbot.v1 Chassis Build Guide - LX-16A Platform*

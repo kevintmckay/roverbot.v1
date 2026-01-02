@@ -1,4 +1,4 @@
-# Mid-Rover Shopping List
+# roverbot.v1 Shopping List
 
 A lightweight rover built around LX-16A serial bus servos.
 
@@ -208,9 +208,9 @@ https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
 
 ---
 
-## COMPARISON: Mid-Rover vs RoverBot v1
+## COMPARISON: roverbot.v1 vs RoverBot v1
 
-| Aspect | Mid-Rover | RoverBot v1 | Savings |
+| Aspect | roverbot.v1 | RoverBot v1 | Savings |
 |--------|-----------|-------------|---------|
 | Motors | $64 | $284 | $220 |
 | Motor drivers | $0 | $30 | $30 |
@@ -219,8 +219,8 @@ https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
 | Compute | $15 | $0 (owned) | - |
 | **Total** | **~$320** | **~$1000** | **~$680** |
 
-The Mid-Rover costs roughly **1/3 the price** of RoverBot v1.
+The roverbot.v1 costs roughly **1/3 the price** of RoverBot v1.
 
 ---
 
-*Generated for Mid-Rover - LX-16A based platform*
+*Generated for roverbot.v1 - LX-16A based platform*
