@@ -1,5 +1,7 @@
 # Mid-Rover: LX-16A Serial Bus Rover
 
+![Mid-Rover](rover.png)
+
 A compact, lightweight rover built around Hiwonder LX-16A serial bus servos.
 
 ## Design Philosophy
@@ -87,6 +89,8 @@ Total: ~30W peak, ~15W cruise
 - [CHASSIS_BUILD.md](CHASSIS_BUILD.md) - Frame design and assembly
 
 ## Variants
+
+![Mid-Rover XL](roverXL.png)
 
 **Want a bigger rover?** See [Mid-Rover XL](../mid-rover-xl/) - same LX-16A servos, but:
 - 500×350mm chassis (vs 300×200mm)
