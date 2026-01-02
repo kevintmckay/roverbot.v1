@@ -6,7 +6,7 @@ Maximum size LX-16A rover - 500mm × 350mm chassis, ~4.5kg target weight.
 
 ---
 
-## YOUR BUILD: ~$272
+## YOUR BUILD: ~$295
 
 ### Drivetrain - $69
 
@@ -28,13 +28,13 @@ LX-16A Servo → 3D Printed Coupler (25T-to-8mm) → 8mm Shaft → Wheel Hub →
 
 **Shaft cuts:** 4× 50mm drive shafts from 500mm rod
 
-### Frame - $56 (Aluminum + Printed)
+### Frame - $60 (Aluminum + Printed)
 
 | Qty | Item | Price | Source |
 |-----|------|-------|--------|
 | 1 | 6ft 1" Al square tube | $17 | Home Depot |
 | 1 | M3/M4/M5 hardware kit | $15 | https://www.amazon.com/dp/B08JCKH31Q |
-| - | 3D printed parts (~600g PETG) | $24 | Print at home |
+| - | 3D printed parts (~700g PETG) | $28 | Print at home |
 
 **Frame cuts:** 2× 500mm + 2× 350mm = 1.7m total
 
@@ -57,37 +57,68 @@ LX-16A Servo → 3D Printed Coupler (25T-to-8mm) → 8mm Shaft → Wheel Hub →
 
 **Alternative:** [Hiwonder Direct](https://www.hiwonder.com/products/serial-bus-servo-controller): $39.99
 
-### Power - $10
+### Power - $12
 
 | Qty | Item | Price | Source | URL |
 |-----|------|-------|--------|-----|
-| 1 | 5V 5A Buck Converter | $10 | Amazon | https://www.amazon.com/dp/B09VY3WQ61 |
+| 1 | 5V 6A Buck Converter | $12 | Amazon | https://www.amazon.com/dp/B09VY3WQ61 |
 
 *Battery, wiring, connectors - already owned*
 
+### Assembly Hardware - $34
+
+| Qty | Item | Price | Source | URL |
+|-----|------|-------|-------------|-----|
+| 1 | M3 Heat-Set Inserts (100 pack) | $15 | Amazon | https://www.amazon.com/dp/B0CKJ5H52Z |
+| 1 | M3x8mm Set Screws (50 pack) | $5 | Amazon | https://www.amazon.com/dp/B07CYNKLT2 |
+| 1 | 8mm E-Clips (100 pack) | $8 | Amazon | https://www.amazon.com/dp/B07H3QWM8S |
+| 1 | Loctite Blue 242 | $6 | Amazon | https://www.amazon.com/dp/B000I1RSNS |
+
+**Usage:**
+- Heat-set inserts: wheel hubs (12), frame brackets (20+)
+- Set screws: wheel hub to shaft (4), coupler to servo (4)
+- E-clips: shaft retention (8)
+- Loctite: all set screws
+
+### Tools Required
+
+| Item | Price | Notes |
+|------|-------|-------|
+| 8mm Reamer | $15 | Wheel hub post-processing |
+| Soldering iron | - | Heat-set insert installation |
+| Hex wrenches (1.5mm, 2mm) | - | Set screws |
+
+*Reamer is optional if you have a drill press with 8mm bit*
+
 ---
 
-## TOTAL: ~$272
+## TOTAL: ~$295
 
 | Vendor | Items | Cost |
 |--------|-------|------|
-| **Amazon** | Servos, hardware, controller, buck | ~$109 |
+| **Amazon** | Servos, hardware, controller, buck, assembly | ~$145 |
 | **McMaster-Carr** | 8mm aluminum rod | ~$5 |
 | **Adafruit** | RPLidar A1 | ~$100 |
 | **Home Depot** | Aluminum tube | ~$17 |
-| **3D Print** | Frame + wheels (~600g PETG) | ~$24 |
-| | **TOTAL** | **~$272** |
+| **3D Print** | Frame + wheels (~700g PETG) | ~$28 |
+| | **TOTAL** | **~$295** |
+
+*Add ~$15 for 8mm reamer if not owned*
 
 ---
 
 ## QUICK ORDER LINKS
 
-### Amazon Cart (~$109)
+### Amazon Cart (~$145)
 ```
 https://www.amazon.com/dp/B073WR3SK9 - LX-16A Servos (4) = $64
 https://www.amazon.com/dp/B09ZL6ZBBN - Servo Controller = $20
 https://www.amazon.com/dp/B08JCKH31Q - Hardware Kit = $15
-https://www.amazon.com/dp/B09VY3WQ61 - 5V Buck Converter = $10
+https://www.amazon.com/dp/B09VY3WQ61 - 5V 6A Buck Converter = $12
+https://www.amazon.com/dp/B0CKJ5H52Z - M3 Heat-Set Inserts = $15
+https://www.amazon.com/dp/B07CYNKLT2 - M3 Set Screws = $5
+https://www.amazon.com/dp/B07H3QWM8S - 8mm E-Clips = $8
+https://www.amazon.com/dp/B000I1RSNS - Loctite Blue 242 = $6
 ```
 
 ### McMaster-Carr (~$5)
@@ -143,6 +174,11 @@ Sawppy-style wheels from [upstream STL files](https://github.com/Roger-random/Sa
 | Electronics tray | 1 | 60g | 60g | 2 hrs |
 | Lidar mount | 1 | 20g | 20g | 30 min |
 | **Total** | - | - | **~680g** | **~42 hrs** |
+
+**Post-processing required:**
+- Wheel hubs: Ream center hole to 8mm, install 4× heat-set inserts each
+- LX-16A couplers: Install 1× heat-set insert for set screw
+- All parts: Clean up bridging, check fit
 
 **STL Sources:**
 - Wheels, hubs, couplers: [Sawppy STL](https://github.com/Roger-random/Sawppy_Rover/tree/master/STL)
