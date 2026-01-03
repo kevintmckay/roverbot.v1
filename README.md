@@ -67,16 +67,7 @@ Leaves **~2.2 kg payload capacity** for accessories (robot arm, gripper, etc.)
 
 ## Frame Design
 
-Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
-
-| Option | Weight | Cost | Best For |
-|--------|--------|------|----------|
-| B: Hybrid Modular | 450g | $15 | Lightest, fastest print, rigid |
-| **E: Pivot Rocker** | **470g** | **$12** | **Default - has suspension** |
-
-### Default: Pivot Rocker Suspension (Option E)
-
-See [PIVOT_FRAME.md](PIVOT_FRAME.md) for full details.
+Pivot rocker suspension - two frame halves connected by center pivot. See [PIVOT_FRAME.md](PIVOT_FRAME.md) for full details.
 
 ```
         500mm (20")
@@ -162,8 +153,7 @@ With ~2.2 kg payload capacity, consider:
 ## Documents
 
 - [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$260)
-- [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options comparison
-- [PIVOT_FRAME.md](PIVOT_FRAME.md) - Default pivot rocker frame design
+- [PIVOT_FRAME.md](PIVOT_FRAME.md) - Pivot rocker frame design & assembly
 
 ---
 
