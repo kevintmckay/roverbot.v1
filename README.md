@@ -52,18 +52,18 @@ This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** 
 | 4x 120mm Sawppy wheels (printed) | 300g |
 | 4x wheel hubs + couplers (printed) | 120g |
 | 8mm drive shafts | 20g |
-| 3D printed frame (panels) | 800g |
-| 3D printed brackets/mounts | 260g |
+| 3D printed frame (pivot) | 470g |
+| 3D printed mounts (lidar, misc) | 50g |
 | 2S 10000mAh LiPo | 450g |
 | Raspberry Pi 5 + case | 150g |
 | RPLidar A1 | 170g |
 | RealSense D435 (optional) | 72g |
 | BNO055 IMU | 10g |
 | Electronics (buck, wiring) | 150g |
-| Payload margin | ~0.8 kg |
-| **TOTAL** | **~2.9 kg base** |
+| Payload margin | ~1.2 kg |
+| **TOTAL** | **~2.3 kg base** |
 
-Leaves **~1.6 kg payload capacity** for accessories (robot arm, gripper, etc.)
+Leaves **~2.2 kg payload capacity** for accessories (robot arm, gripper, etc.)
 
 ## Frame Design
 
@@ -72,47 +72,39 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
 | Option | Weight | Cost | Best For |
 |--------|--------|------|----------|
 | A: Aluminum Tube + Printed | 550g | $20 | Strongest, most adjustable |
-| B: Hybrid (Printed + Rod) | 450g | $15 | Lightest, all prints fit MK4S |
+| B: Hybrid (Printed + Rod) | 450g | $15 | All prints fit MK4S |
 | C: Full Print (Halves) | 600g | $15 | Large bed printers only |
-| **D: Full Print (Panels)** | 800g | $20 | **Default - fits standard beds** |
+| D: Full Print (Panels) | 800g | $20 | Enclosed electronics bay |
+| **E: Pivot Rocker** | **470g** | **$12** | **Default - simple suspension** |
 
-### Default: Panel Construction (Option D)
+### Default: Pivot Rocker Suspension (Option E)
+
+See [PIVOT_FRAME.md](PIVOT_FRAME.md) for full details.
 
 ```
         500mm (20")
     ┌─────────────────────────────────────────────┐
-    │  ┌───────────────────────────────────────┐  │
-    │  │         TOP DECK (split in 2)         │  │
-    │  └───────────────────────────────────────┘  │
     │                                             │
-    │   ┌─────┐                         ┌─────┐   │
-    │   │ S1  │                         │ S2  │   │  350mm
-    │   └──┬──┘                         └──┬──┘   │  (14")
-    │      ○ 120mm                    120mm ○     │
-    │        Sawppy                   Sawppy      │
-    │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │  ← Side rail
-    │            ┌─────────────────┐              │
-    │            │   Electronics   │              │
-    │            │      Bay        │              │
-    │            └─────────────────┘              │
-    │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │  ← Side rail
-    │        Sawppy                   Sawppy      │
-    │      ○ 120mm                    120mm ○     │
-    │   ┌──┴──┐                         ┌──┴──┐   │
-    │   │ S3  │                         │ S4  │   │
-    │   └─────┘                         └─────┘   │
+    │   ┌─────┐    FRONT HALF      ┌─────┐       │
+    │   │ S1  │     [lidar]        │ S2  │       │
+    │   └──┬──┘     [Pi 5]         └──┬──┘       │
+    │      ○ 120mm                120mm ○        │  350mm
+    │                                             │  (14")
+    │               ════●════  ← pivot            │
+    │                                             │
+    │      ○ 120mm                120mm ○        │
+    │   ┌──┴──┐    REAR HALF       ┌──┴──┐       │
+    │   │ S3  │   [battery]        │ S4  │       │
+    │   └─────┘   [electronics]    └─────┘       │
     │                                             │
     └─────────────────────────────────────────────┘
 ```
 
-**3D printed frame parts (~800g, ~20 hrs):**
-- 2x Top deck halves (250×175mm each)
-- 2x Side rails (500×40×40mm, print diagonal)
-- 2x End rails (350×40×40mm)
-- 4x Corner gussets
-- 4x Servo mounts
-- 1x Electronics tray
-- 1x Lidar mount
+**3D printed frame parts (~470g, ~14 hrs):**
+- 1x Front half (200×250mm)
+- 1x Rear half (200×250mm)
+- 4x Servo arms (80×60mm each)
+- 2x Pivot bushings
 
 ## Sensor Configuration
 
@@ -172,8 +164,9 @@ With ~1.9 kg payload capacity, consider:
 
 ## Documents
 
-- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$270)
-- [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options (aluminum, hybrid, full print)
+- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$260)
+- [FRAME_OPTIONS.md](FRAME_OPTIONS.md) - Frame build options comparison
+- [PIVOT_FRAME.md](PIVOT_FRAME.md) - Default pivot rocker frame design
 
 ---
 

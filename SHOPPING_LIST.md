@@ -1,10 +1,10 @@
 # roverbot.v1 Shopping List
 
-500mm × 350mm chassis, fully 3D printed frame, ~$270 total.
+500mm × 350mm chassis, pivot rocker suspension, ~$260 total.
 
 ---
 
-## Parts to Buy - $270
+## Parts to Buy - $260
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
@@ -18,13 +18,13 @@
 | 1 | 8mm E-Clips (44) | $8 | https://www.amazon.com/dp/B015LLOD64 |
 | 1 | Loctite Blue 242 | $6 | https://www.amazon.com/dp/B000I1RSNS |
 | 1 | 8mm Aluminum Rod 500mm | $5 | https://www.mcmaster.com/4634t34 |
-| - | 3D Print (~1.2kg PETG) | $48 | - |
+| - | 3D Print (~1kg PETG) | $40 | - |
 
-**Total: ~$270** (+$15 for 8mm reamer if needed)
+**Total: ~$260** (+$15 for 8mm reamer if needed)
 
 ---
 
-## 3D Printed Parts (~60 hrs)
+## 3D Printed Parts (~49 hrs)
 
 ### Wheels - [Sawppy STL](https://github.com/Roger-random/Sawppy_Rover/tree/master/STL)
 
@@ -34,19 +34,19 @@
 | Wheel Hub | 4 | 80g | 2 hrs |
 | LX-16A Coupler | 4 | 40g | 1 hr |
 
-### Frame - Panel Construction (fits 250×220mm bed)
+### Frame - Pivot Rocker (fits 250×220mm bed)
+
+See [PIVOT_FRAME.md](PIVOT_FRAME.md) for details.
 
 | Part | Qty | Weight | Time |
 |------|-----|--------|------|
-| Top deck (split) | 2 | 300g | 8 hrs |
-| Side rail (print diagonal) | 2 | 160g | 6 hrs |
-| End rail | 2 | 120g | 4 hrs |
-| Corner gusset | 4 | 80g | 4 hrs |
-| Servo mount | 4 | 80g | 3 hrs |
-| Electronics tray | 1 | 60g | 2 hrs |
-| Lidar mount | 1 | 20g | 0.5 hr |
+| Front half | 1 | 180g | 4 hrs |
+| Rear half | 1 | 200g | 5 hrs |
+| Servo arm | 4 | 80g | 4 hrs |
+| Pivot bushing | 2 | 10g | 0.5 hr |
+| Misc mounts | - | 50g | 1 hr |
 
-| **Total** | | **~1.2kg** | **~60 hrs** |
+| **Total** | | **~940g** | **~49 hrs** |
 
 Post-processing: Ream wheel hubs to 8mm, install heat-set inserts.
 
@@ -65,7 +65,7 @@ Post-processing: Ream wheel hubs to 8mm, install heat-set inserts.
 
 ## Cuts
 
-- **8mm rod:** 4× 50mm shafts
+- **8mm rod:** 4× 50mm wheel shafts + 1× 100mm pivot rod
 
 ---
 

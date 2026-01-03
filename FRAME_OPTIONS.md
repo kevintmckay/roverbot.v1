@@ -14,6 +14,9 @@ The 500×350mm chassis is too large for most 3D printer beds. Here are the build
 | B: Hybrid Modular | 450g | Very Good | $15 | 8 hrs + 32 hrs wheels | Easy |
 | C: Full Print (Halves) | 600g | Good | $15 | 16 hrs + 32 hrs wheels | Medium |
 | D: Full Print (Panels) | 800g | Good | $20 | 20 hrs + 32 hrs wheels | Medium |
+| **E: Pivot Rocker** | **470g** | **Good** | **$12** | **14 hrs + 32 hrs wheels** | **Easy** |
+
+**Recommended: [Option E - Pivot Rocker](PIVOT_FRAME.md)** - Lightest, simplest, adds suspension.
 
 *Frame cost only - see SHOPPING_LIST.md for full build*
 
