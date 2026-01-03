@@ -1,6 +1,6 @@
 # roverbot.v1: LX-16A Serial Bus Rover
 
-![roverbot.v1](rover.png)
+![roverbot.v1](rover_pivot.png)
 
 A robust rover platform built around Hiwonder LX-16A serial bus servos with Sawppy-style 3D printed wheels and 2.2 kg payload capacity.
 
