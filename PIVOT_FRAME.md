@@ -1,5 +1,7 @@
 # Pivot Rocker Frame Design
 
+![Pivot Rocker Suspension](rocker.png)
+
 Simple center-pivot suspension for roverbot.v1. Two frame halves rock independently, keeping all 4 wheels on the ground over uneven terrain.
 
 ---

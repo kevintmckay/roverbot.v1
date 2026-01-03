@@ -71,11 +71,8 @@ Multiple options available (see [FRAME_OPTIONS.md](FRAME_OPTIONS.md)):
 
 | Option | Weight | Cost | Best For |
 |--------|--------|------|----------|
-| A: Aluminum Tube + Printed | 550g | $20 | Strongest, most adjustable |
-| B: Hybrid (Printed + Rod) | 450g | $15 | All prints fit MK4S |
-| C: Full Print (Halves) | 600g | $15 | Large bed printers only |
-| D: Full Print (Panels) | 800g | $20 | Enclosed electronics bay |
-| **E: Pivot Rocker** | **470g** | **$12** | **Default - simple suspension** |
+| B: Hybrid Modular | 450g | $15 | Lightest, fastest print, rigid |
+| **E: Pivot Rocker** | **470g** | **$12** | **Default - has suspension** |
 
 ### Default: Pivot Rocker Suspension (Option E)
 
