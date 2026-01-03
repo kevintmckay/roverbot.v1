@@ -2,7 +2,7 @@
 
 ![roverbot.v1](rover.png)
 
-A robust rover platform built around Hiwonder LX-16A serial bus servos with Sawppy-style 3D printed wheels and 1.9 kg payload capacity.
+A robust rover platform built around Hiwonder LX-16A serial bus servos with Sawppy-style 3D printed wheels and 2.2 kg payload capacity.
 
 ## Design Philosophy
 
@@ -18,10 +18,10 @@ This platform maximizes size while maintaining a **3:1 thrust-to-weight ratio** 
 | Ground Clearance | 60mm |
 | Max Speed | 0.34 m/s |
 | Thrust:Weight | 3:1 |
-| Frame | Fully 3D printed (panels) |
+| Frame | Pivot rocker suspension |
 | Battery | 2S LiPo |
 | Runtime | ~4 hours |
-| Payload | 1.9 kg |
+| Payload | 2.2 kg |
 
 ## Torque Budget
 
@@ -149,7 +149,7 @@ Runtime: 74Wh ÷ 18W = ~4 hours
 
 ## Expansion Options
 
-With ~1.9 kg payload capacity, consider:
+With ~2.2 kg payload capacity, consider:
 
 | Add-on | Weight | Notes |
 |--------|--------|-------|

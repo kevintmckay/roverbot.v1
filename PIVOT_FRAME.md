@@ -1,6 +1,6 @@
 # Pivot Rocker Frame Design
 
-![Pivot Rocker Suspension](rocker.png)
+![Pivot Rocker Suspension](rover_pivot.png)
 
 Simple center-pivot suspension for roverbot.v1. Two frame halves rock independently, keeping all 4 wheels on the ground over uneven terrain.
 
@@ -202,20 +202,6 @@ Use spiral wrap with 50mm slack loop at pivot.
 - Mount Pi 5 in front half
 - Mount battery in rear half
 - Connect power and servo controller
-
----
-
-## Comparison vs Other Frame Options
-
-| Aspect | Panel Frame (D) | Pivot Rocker |
-|--------|-----------------|--------------|
-| Parts | 10+ panels | 6 pieces |
-| Weight | 800g | 470g |
-| Print time | 20 hrs | 14 hrs |
-| Joints | 8+ bolted | 4 arm bolts + 1 pivot |
-| Terrain | Rigid | Adaptive |
-| Complexity | Medium | Low |
-| Repair | Replace panel | Replace arm or half |
 
 ---
 
