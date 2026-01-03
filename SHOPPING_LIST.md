@@ -1,10 +1,10 @@
 # roverbot.v1 Shopping List
 
-500mm × 350mm chassis, pivot rocker suspension, ~$260 total.
+500mm × 350mm chassis, pivot rocker suspension, ~$271 total.
 
 ---
 
-## Parts to Buy - $260
+## Parts to Buy - $271
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
@@ -18,9 +18,11 @@
 | 1 | 8mm E-Clips (44) | $8 | https://www.amazon.com/dp/B015LLOD64 |
 | 1 | Loctite Blue 242 | $6 | https://www.amazon.com/dp/B000I1RSNS |
 | 1 | 8mm Aluminum Rod 500mm | $5 | https://www.mcmaster.com/4634t34 |
+| 1 | 20A Blade Fuse + Holder | $6 | https://www.amazon.com/dp/B07PWCMQK2 |
+| 1 | Spiral Wrap 1/4" 10ft | $5 | https://www.amazon.com/dp/B07FXF12HC |
 | - | 3D Print (~1kg PETG) | $40 | - |
 
-**Total: ~$260** (+$15 for 8mm reamer if needed)
+**Total: ~$271** (+$15 for 8mm reamer if needed)
 
 ---
 

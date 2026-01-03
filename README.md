@@ -152,7 +152,7 @@ With ~2.2 kg payload capacity, consider:
 
 ## Documents
 
-- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$260)
+- [SHOPPING_LIST.md](SHOPPING_LIST.md) - Complete parts list (~$271)
 - [PIVOT_FRAME.md](PIVOT_FRAME.md) - Pivot rocker frame design & assembly
 
 ---
